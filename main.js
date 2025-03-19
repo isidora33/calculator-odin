@@ -139,4 +139,22 @@ backspace.addEventListener('click', ()=>{
   }
 })
 
+document.addEventListener("keydown", function (event) {
+  const key = event.key;
+
+  if (!isNaN(key)) {
+      document.querySelector(`button[data-value='${key}']`)?.click();
+  } else if (["+", "-", "*", "/"].includes(key)) {
+      document.querySelector(`button[data-value='${key}']`)?.click();
+  } else if (key === "Enter" || key === "=") {
+      document.querySelector(`button[data-value='=']`)?.click();
+  } else if (key === "Backspace") {
+      document.querySelector(`button[data-value='backspace']`)?.click();
+  } else if (key === "Escape") {
+      document.querySelector(`button[data-value='clear']`)?.click();
+  } else if (key === ".") {
+      document.querySelector(`button[data-value='.']`)?.click();
+  }
+});
+
 
