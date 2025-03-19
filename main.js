@@ -157,4 +157,16 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
+document.getElementById("plus-minus").addEventListener("click", function () {
+  let currentValue = display.innerText.trim();
 
+  if (currentValue === "") return;
+
+  if (currentValue === "0" || currentValue === "-0" || currentValue === "0.00") return;
+
+  if (currentValue.startsWith("-")) {
+      display.innerText = currentValue.substring(1); 
+  } else {
+      display.innerText = "-" + currentValue; 
+  }
+});
